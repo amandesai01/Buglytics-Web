@@ -45,7 +45,9 @@ import Card from '~/components/Card'
 
 export default {
   name: 'HomePage',
-
+  created(){
+    this.$router.push('/login')
+  },
   components: {
     Card
   }
