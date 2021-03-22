@@ -1,54 +1,44 @@
 <template>
-  <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
+<div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <nuxt-link :to="'/'" class="navbar-item">
+        Home
+      </nuxt-link>
+
+      <nuxt-link :to="'/documentation'" class="navbar-item">
+        Documentation
+      </nuxt-link>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <nuxt-link :to="'/register'" class="button is-primary">
+            <strong>Join Us!</strong>
+          </nuxt-link>
+          <nuxt-link :to="'/login'" class="button is-light">
+            Log in
+          </nuxt-link>
         </div>
       </div>
-    </nav>
-
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
-
-      <div class="container column is-10">
-        <nuxt />
-      </div>
-    </section>
+    </div>
+  </div>
+</nav>
+    <nuxt/>
   </div>
 </template>
 
