@@ -155,7 +155,7 @@ export default {
     },
     async createproject() {
       this.isProjectLoading = true;
-      if (!this.name || this.details) {
+      if (!this.name || !this.details) {
         this.showErrorNotification = true;
         this.errorMessage = "Fill Form Properly";
         this.isCardModalActive = false;
